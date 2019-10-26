@@ -65,6 +65,12 @@ export default class App extends Component {
   state = {
     email: '',
     password: '',
+    loading: false,
+  };
+
+  handleSend = () => {
+    this.props.navigation.navigate('User');
+    // this.props.navigation.navigate('Users');
   };
 
   render() {
@@ -73,12 +79,12 @@ export default class App extends Component {
         <ImageBackground
           style={styles.container}
           resizeMode="cover"
-          source={require('../../images/logo.jpeg')}
+          source={require('../images/logo.jpeg')}
         >
           <ImageBackground
             style={styles.folha}
             resizeMode="cover"
-            source={require('../../images/folha.png')}
+            source={require('../images/folha.png')}
           />
           <Text style={styles.textMain}>SustentSocial</Text>
 
@@ -97,7 +103,7 @@ export default class App extends Component {
           />
           <TouchableOpacity
             style={styles.buttom}
-            onPress={() => this.props.navigation.navigate('User')}
+            onPress={() => this.handleSend()}
           >
             <Text style={styles.buttomText}>Entrar</Text>
           </TouchableOpacity>
